@@ -1,0 +1,26 @@
+{
+  "name": "dinvishesh",
+  "version": "1.0.0",
+  "description": "A simple NPM Package which returns dinvishesh (On This Day in History). Get your daily dinvishesh and increase knowledge!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinodnimbalkar/dinvishesh.git"
+  },
+  "keywords": [
+    "dinvishesh",
+    "marathi",
+    "जन्म",
+    "घटना",
+    "मृत्यू"
+  ],
+  "author": "Vinod Nimbalkar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vinodnimbalkar/dinvishesh/issues"
+  },
+  "homepage": "https://github.com/vinodnimbalkar/dinvishesh#readme"
+}
