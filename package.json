@@ -4,7 +4,8 @@
   "description": "A simple NPM Package which returns dinvishesh (On This Day in History). Get your daily dinvishesh and increase knowledge!",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "test": "mocha || exit 0"
   },
   "repository": {
     "type": "git",
@@ -22,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/vinodnimbalkar/dinvishesh/issues"
   },
-  "homepage": "https://github.com/vinodnimbalkar/dinvishesh#readme"
+  "homepage": "https://github.com/vinodnimbalkar/dinvishesh#readme",
+  "devDependencies": {
+    "chai": "^4.2.0"
+  }
 }
