@@ -142,7 +142,7 @@ $ node demo.js
 
 ## Contributing
 
-Feel free to open an issue (or even better, send a Pull Request) for expanding this list. Contributions are very welcome!! 😄
+Feel free to open an issue (or even better, send a Pull Request). Contributions are very welcome!! 😄
 
 <a href="https://www.buymeacoffee.com/vinodnimbalkar" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
 
