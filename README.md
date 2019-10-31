@@ -1,6 +1,7 @@
 # DinVishesh
 
 #### A simple NPM Package which returns dinvishesh (On This Day in History). Get your daily dinvishesh and increase knowledge!
+[![Build Status](https://travis-ci.org/vinodnimbalkar/dinvishesh.svg?branch=master)](https://travis-ci.org/vinodnimbalkar/dinvishesh)
 
 ## Installation
 
@@ -18,7 +19,7 @@ $ npm install --save dinvishesh
 
 ## Usage
 
-- **_dinVisheshToday()_** method returns an object containing **_janm_**, **_janm_** and **_ghatana_** of current Date like `new Date()`.
+- **_dinVisheshToday()_** method returns an object containing **_janm_**, **_mrutyu_** and **_ghatana_** of current Date like `new Date()`.
 
 ```json
 {
@@ -38,7 +39,7 @@ $ npm install --save dinvishesh
 ```
 
 - **_dinVishesh(category, month, day)_** method take three parameter, which are optional.
-  - _category_ - **_janm_** | **_janm_** | **_ghatana_** (Default to **_janm_**)
+  - _category_ - **_janm_** | **_mrutyu_** | **_ghatana_** (Default to **_janm_**)
   - _month_ - any month in lowercase e.g. `january` in string format
   - _day_ - any valid date related to month e.g. `11` in string format, it reurn array of string.
 
