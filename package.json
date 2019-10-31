@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/vinodnimbalkar/dinvishesh#readme",
   "devDependencies": {
-    "chai": "^4.2.0"
+    "chai": "^4.2.0",
+    "mocha": "^6.2.2"
   }
 }
