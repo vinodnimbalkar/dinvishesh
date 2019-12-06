@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "mocha || exit 0"
+    "test": "nyc mocha || exit 0",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,8 @@
   "homepage": "https://github.com/vinodnimbalkar/dinvishesh#readme",
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^6.2.2"
+    "coveralls": "^3.0.9",
+    "mocha": "^6.2.2",
+    "nyc": "^14.1.1"
   }
 }
