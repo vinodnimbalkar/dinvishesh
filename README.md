@@ -2,6 +2,7 @@
 
 #### A simple NPM Package which returns dinvishesh (On This Day in History). Get your daily dinvishesh and increase knowledge!
 [![Build Status](https://travis-ci.org/vinodnimbalkar/dinvishesh.svg?branch=master)](https://travis-ci.org/vinodnimbalkar/dinvishesh)
+[![Coverage Status](https://coveralls.io/repos/github/vinodnimbalkar/dinvishesh/badge.svg?branch=master)](https://coveralls.io/github/vinodnimbalkar/dinvishesh?branch=master)
 
 ## Installation
 
