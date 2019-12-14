@@ -1,5 +1,5 @@
 const data = require("../data/dinvishesh.json");
-const index = require("../index.js");
+const index = require("../src/index.js");
 
 const assert = require("chai").assert;
 

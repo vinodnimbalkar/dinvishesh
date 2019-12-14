@@ -1,4 +1,4 @@
-const dinVisheshData = require("./data/dinvishesh.json");
+const dinVisheshData = require("../data/dinvishesh.json");
 
 /**
  * A constant variable called 'monthNames'
