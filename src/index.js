@@ -1,4 +1,4 @@
-const dinVisheshData = require("../data/dinvishesh.json");
+import dinVisheshData from '../data/data.js';
 
 /**
  * A constant variable called 'monthNames'
@@ -48,7 +48,7 @@ const currentMonth = monthNames[date.getMonth()];
  * @returns {Object}
  */
 const dinVisheshToday = () => {
-  dataToday = categoryList.map(
+  let dataToday = categoryList.map(
     cat => dinVisheshData.category[cat][currentMonth][currentDay]
   );
   let responseData = {
@@ -105,7 +105,6 @@ const dinVisheshAll = () => {
 const dinVisheshByCategory = category => {
   return dinVisheshData.category[category];
 };
-
 /**
  * Module exports
  */
