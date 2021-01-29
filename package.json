@@ -1,6 +1,6 @@
 {
   "name": "dinvishesh",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A simple NPM Package which returns dinvishesh (On This Day in History). Get your daily dinvishesh and increase knowledge!",
   "source": "src/index.js",
   "main": "dist/dinvishesh.js",

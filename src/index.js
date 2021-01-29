@@ -108,7 +108,7 @@ const dinVisheshByCategory = category => {
 /**
  * Module exports
  */
-module.exports = {
+export {
   dinVisheshToday,
   dinVishesh,
   dinVisheshAll,
