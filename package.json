@@ -1,23 +1,44 @@
 {
   "name": "dinvishesh",
-  "version": "1.0.2",
+  "version": "0.1.3",
   "description": "A simple NPM Package which returns dinvishesh (On This Day in History). Get your daily dinvishesh and increase knowledge!",
-  "source": "src/index.js",
-  "main": "dist/dinvishesh.js",
-  "module": "dist/dinvishesh.module.js",
-  "unpkg": "dist/dinvishesh.umd.js",
-  "type": "module",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": ["dist", "src"],
+  "engines": {
+    "node": ">=10"
+  },
   "scripts": {
-    "start": "node src/index.js",
-    "test": "nyc mocha || exit 0",
-    "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "build": "microbundle",
-    "dev": "microbundle watch"
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why",
+    "coverage": "tsdx test --coverage"
+  },
+  "peerDependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vinodnimbalkar/dinvishesh.git"
   },
+  "bugs": {
+    "url": "https://github.com/vinodnimbalkar/dinvishesh/issues"
+  },
+  "homepage": "https://github.com/vinodnimbalkar/dinvishesh#readme",
   "keywords": [
     "dinvishesh",
     "marathi",
@@ -26,16 +47,20 @@
     "मृत्यू"
   ],
   "author": "Vinod Nimbalkar",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/vinodnimbalkar/dinvishesh/issues"
-  },
-  "homepage": "https://github.com/vinodnimbalkar/dinvishesh#readme",
+  "module": "dist/dinvishesh.esm.js",
+  "size-limit": [{
+    "path": "dist/dinvishesh.cjs.production.min.js",
+    "limit": "3 MB"
+  }, {
+    "path": "dist/dinvishesh.esm.js",
+    "limit": "3 MB"
+  }],
   "devDependencies": {
-    "chai": "^4.2.0",
-    "coveralls": "^3.0.9",
-    "microbundle": "^0.12.0",
-    "mocha": "^8.1.1",
-    "nyc": "^14.1.1"
+    "@size-limit/preset-small-lib": "^4.11.0",
+    "husky": "^6.0.0",
+    "size-limit": "^4.11.0",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.2.0",
+    "typescript": "^3.9.9"
   }
 }

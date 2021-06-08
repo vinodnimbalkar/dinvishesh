@@ -7,3 +7,5 @@ console.log(dinvishesh.dinVishesh("janm", "january", "11"));
 console.log(dinvishesh.dinVisheshAll());
 
 console.log(dinvishesh.dinVisheshByCategory("ghatana"));
+
+console.log(dinvishesh.dinVisheshByCategoryAndMonth("ghatana", "may"));

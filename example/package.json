@@ -16,6 +16,6 @@
   "author": "Vinod Nimbalkar",
   "license": "MIT",
   "dependencies": {
-    "dinvishesh": "^1.0.0"
+    "dinvishesh": "^1.0.3"
   }
 }
