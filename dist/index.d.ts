@@ -7,4 +7,4 @@ declare const dinVishesh: (cat: string | undefined, month: string, day: string) 
 declare const dinVisheshByCategoryAndMonth: (cat: string, month: string) => any;
 declare const dinVisheshAll: () => any;
 declare const dinVisheshByCategory: (cat: string) => any;
-export { dinVisheshToday, dinVishesh, dinVisheshByCategoryAndMonth, dinVisheshAll, dinVisheshByCategory };
+export { dinVisheshToday, dinVishesh, dinVisheshByCategoryAndMonth, dinVisheshAll, dinVisheshByCategory, };
