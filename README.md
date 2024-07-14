@@ -1,18 +1,16 @@
 # DinVishesh
 
-#### A simple NPM Package which returns dinvishesh (On This Day in History). Get your daily dinvishesh and increase knowledge!
+#### A simple NPM Package that returns dinvishesh (On This Day in History). Get your daily dinvishesh and increase your knowledge!
 [![Build Status](https://travis-ci.org/vinodnimbalkar/dinvishesh.svg?branch=master)](https://travis-ci.org/vinodnimbalkar/dinvishesh)
 [![Coverage Status](https://coveralls.io/repos/github/vinodnimbalkar/dinvishesh/badge.svg?branch=master)](https://coveralls.io/github/vinodnimbalkar/dinvishesh?branch=master)
 
 ## Installation
 
-This is a [Node.js](https://nodejs.org/en/) module available through the
-[npm registry](https://www.npmjs.com/).
+This is a [Node.js](https://nodejs.org/en/) module available through the [npm registry](https://www.npmjs.com/).
 
 Before installing, [download and install Node.js](https://nodejs.org/en/download/).
 
-Installation is done using the
-**[`npm install`](https://docs.npmjs.com/getting-started/installing-npm-packages-locally)** command:
+Installation is done using the **[`npm install`](https://docs.npmjs.com/getting-started/installing-npm-packages-locally)** command:
 
 ```bash
 $ npm install --save dinvishesh
@@ -20,7 +18,9 @@ $ npm install --save dinvishesh
 
 ## Usage
 
-- **_dinVisheshToday()_** method returns an object containing **_janm_**, **_mrutyu_** and **_ghatana_** of current Date like `new Date()`.
+### dinVisheshToday
+
+The **_dinVisheshToday()_** method returns an object containing **_janm_** (births), **_mrutyu_** (deaths), and **_ghatana_** (events) for the current date, like `new Date()`.
 
 ```json
 {
@@ -39,10 +39,12 @@ $ npm install --save dinvishesh
 }
 ```
 
-- **_dinVishesh(category, month, day)_** method take three parameter, which are optional.
-  - _category_ - **_janm_** | **_mrutyu_** | **_ghatana_** (Default to **_janm_**)
-  - _month_ - any month in lowercase e.g. `january` in string format
-  - _day_ - any valid date related to month e.g. `11` in string format, it reurn array of string.
+### dinVishesh
+
+The **_dinVishesh(category, month, day)_** method takes three optional parameters:
+- _category_ - **_janm_**, **_mrutyu_**, or **_ghatana_** (Defaults to **_janm_**)
+- _month_ - any month in lowercase e.g., `january` in string format
+- _day_ - any valid date related to the month e.g., `11` in string format. It returns an array of strings.
 
 ```json
 [
@@ -56,7 +58,9 @@ $ npm install --save dinvishesh
 ]
 ```
 
-- **_dinVisheshByCategory(category)_** method take one parameter **_janm_** or **_mrutyu_** or **_ghatana_** in string format and returns an object containing months.
+### dinVisheshByCategory
+
+The **_dinVisheshByCategory(category)_** method takes one parameter: **_janm_**, **_mrutyu_**, or **_ghatana_** in string format, and returns an object containing months.
 
 ```json
 {
@@ -75,7 +79,9 @@ $ npm install --save dinvishesh
 }
 ```
 
-- **_dinVisheshAll()_** method returns an object containing category.
+### dinVisheshAll
+
+The **_dinVisheshAll()_** method returns an object containing categories.
 
 ```json
 {
