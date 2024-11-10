@@ -1,159 +1,127 @@
 # DinVishesh
 
-#### A simple NPM Package that returns dinvishesh (On This Day in History). Get your daily dinvishesh and increase your knowledge!
 [![Build Status](https://travis-ci.org/vinodnimbalkar/dinvishesh.svg?branch=master)](https://travis-ci.org/vinodnimbalkar/dinvishesh)
 [![Coverage Status](https://coveralls.io/repos/github/vinodnimbalkar/dinvishesh/badge.svg?branch=master)](https://coveralls.io/github/vinodnimbalkar/dinvishesh?branch=master)
 
+A Node.js package that provides "On This Day in History" (dinvishesh) information in Marathi. Get historical events, births, and deaths for any date to enhance your knowledge of Indian history and culture.
+
+## Features
+
+- Get historical data for any specific date
+- Three categories of information:
+  - **Janm** (Births) - Notable personalities born on a date
+  - **Mrutyu** (Deaths) - Notable personalities who passed away on a date
+  - **Ghatana** (Events) - Significant historical events that occurred on a date
+- Flexible API with multiple ways to query data
+- Data available in Marathi language
+- Zero dependencies
+
 ## Installation
 
-This is a [Node.js](https://nodejs.org/en/) module available through the [npm registry](https://www.npmjs.com/).
-
-Before installing, [download and install Node.js](https://nodejs.org/en/download/).
-
-Installation is done using the **[`npm install`](https://docs.npmjs.com/getting-started/installing-npm-packages-locally)** command:
-
 ```bash
-$ npm install --save dinvishesh
+npm install dinvishesh
 ```
 
-## Usage
+## API Reference
 
-### dinVisheshToday
+### 1. dinVisheshToday()
 
-The **_dinVisheshToday()_** method returns an object containing **_janm_** (births), **_mrutyu_** (deaths), and **_ghatana_** (events) for the current date, like `new Date()`.
+Returns historical information for the current date.
 
-```json
+```javascript
+const dinvishesh = require('dinvishesh');
+const today = dinvishesh.dinVisheshToday();
+```
+
+Example response:
+```javascript
 {
   "janm": [
-    "१८८१: स्पॅनिश चित्रकार आणि शिल्पकार पाब्लो पिकासो यांचा जन्म. (मृत्यू: ८ एप्रिल १९७३)",
-    "१९३७: संगीत समीक्षक डॉ. अशोक रानडे यांचा जन्म. (मृत्यू: ३० जुलै २०११)"
+    "१८८१: स्पॅनिश चित्रकार आणि शिल्पकार पाब्लो पिकासो यांचा जन्म.",
+    "१९३७: संगीत समीक्षक डॉ. अशोक रानडे यांचा जन्म."
   ],
-  "mrutyu": [
-    "१९५५: शास्त्रीय गायक पं. दत्तात्रय विष्णू ऊर्फ बापूराव पलुसकर यांचे निधन. (जन्म: २८ मे १९२१)",
-    "१९६०: फर्ग्युसन कंपनी चे संस्थापक हॅरी फर्ग्युसन यांचे निधन. (जन्म: ४ नोव्हेंबर १८८४)"
-  ],
-  "ghatana": [
-    "१९६२: युगांडाचा संयुक्त राष्ट्रांत (United Nations) प्रवेश.",
-    "१९९४: ए. एम. अहमदी यांनी भारताचे २६ वे सरन्यायाधीश म्हणुन कार्यभार सांभाळला."
-  ]
+  "mrutyu": [...],
+  "ghatana": [...]
 }
 ```
 
-### dinVishesh
+### 2. dinVishesh(category, month, day)
 
-The **_dinVishesh(category, month, day)_** method takes three optional parameters:
-- _category_ - **_janm_**, **_mrutyu_**, or **_ghatana_** (Defaults to **_janm_**)
-- _month_ - any month in lowercase e.g., `january` in string format
-- _day_ - any valid date related to the month e.g., `11` in string format. It returns an array of strings.
+Retrieve historical information for a specific date and category.
 
-```json
-[
-  "१८१५: कॅनडाचे पहिले पंतप्रधान जॉन ए. मॅकडोनाल्ड यांचा जन्म. (मृत्यू: ६ जून १८९१)",
-  "१८५८: हिंदी साहित्यिक श्रीधर पाठक यांचा जन्म. (मृत्यू: १३ सप्टेंबर १९२६)",
-  "१८५९: ब्रिटिश मुत्सद्दी आणि भारताचे व्हॉइसराय लॉर्ड कर्झन यांचा जन्म. (मृत्यू: २० मार्च १९२५)",
-  "१८९८: ज्ञानपीठ विजेते साहित्यिक वि. स. खांडेकर यांचा जन्म.",
-  "१९४४: झारखंडचे ७ वे मुख्यमंत्री आणि खासदार शिबू सोरेन यांचा जन्म.",
-  "१९५५: उपशास्त्रीय व नाट्यसंगीत गायिका आशा खाडिलकर यांचा जन्म.",
-  "१९७३: क्रिकेटपटू खेळाडू द. ग्रेट इंडियन वॉल राहुल द्रविड यांचा जन्म."
-]
+**Parameters:**
+- `category` (optional): 'janm', 'mrutyu', or 'ghatana' (default: 'janm')
+- `month` (optional): Month name in lowercase English (e.g., 'january')
+- `day` (optional): Day of month as string (e.g., '25')
+
+```javascript
+const births = dinvishesh.dinVishesh('janm', 'january', '11');
 ```
 
-### dinVisheshByCategory
+### 3. dinVisheshByCategory(category)
 
-The **_dinVisheshByCategory(category)_** method takes one parameter: **_janm_**, **_mrutyu_**, or **_ghatana_** in string format, and returns an object containing months.
+Get all entries for a specific category organized by month.
 
-```json
-{
-  "january": [Object],
-  "february": [Object],
-  "march": [Object],
-  "april": [Object],
-  "may": [Object],
-  "june": [Object],
-  "july": [Object],
-  "august": [Object],
-  "september": [Object],
-  "october": [Object],
-  "november": [Object],
-  "december": [Object]
-}
+**Parameters:**
+- `category`: 'janm', 'mrutyu', or 'ghatana'
+
+```javascript
+const allBirths = dinvishesh.dinVisheshByCategory('janm');
 ```
 
-### dinVisheshAll
+### 4. dinVisheshAll()
 
-The **_dinVisheshAll()_** method returns an object containing categories.
+Retrieve the complete database of historical information.
 
-```json
-{
-  "category": {
-    "janm": {
-      "january": [Object],
-      "february": [Object],
-      "march": [Object],
-      "april": [Object],
-      "may": [Object],
-      "june": [Object],
-      "july": [Object],
-      "august": [Object],
-      "september": [Object],
-      "october": [Object],
-      "november": [Object],
-      "december": [Object]
-    },
-    "mrutyu": {
-      "january": [Object],
-      "february": [Object],
-      "march": [Object],
-      "april": [Object],
-      "may": [Object],
-      "june": [Object],
-      "july": [Object],
-      "august": [Object],
-      "september": [Object],
-      "october": [Object],
-      "november": [Object],
-      "december": [Object]
-    },
-    "ghatana": {
-      "january": [Object],
-      "february": [Object],
-      "march": [Object],
-      "april": [Object],
-      "may": [Object],
-      "june": [Object],
-      "july": [Object],
-      "august": [Object],
-      "september": [Object],
-      "october": [Object],
-      "november": [Object],
-      "december": [Object]
-    }
-  }
-}
+```javascript
+const completeData = dinvishesh.dinVisheshAll();
 ```
 
-## Examples
+## Usage Examples
 
-To view the examples, clone the **dinvishesh** repo and install the dependencies:
+```javascript
+const dinvishesh = require('dinvishesh');
+
+// Get today's historical events
+const today = dinvishesh.dinVisheshToday();
+console.log('Today in history:', today.ghatana);
+
+// Get births on a specific date
+const births = dinvishesh.dinVishesh('janm', 'january', '11');
+console.log('Born on January 11:', births);
+
+// Get all deaths by month
+const deaths = dinvishesh.dinVisheshByCategory('mrutyu');
+console.log('Deaths in January:', deaths.january);
+```
+
+For more examples, check the `examples` directory in the repository:
 
 ```bash
-$ git clone https://github.com/vinodnimbalkar/dinvishesh.git
-$ cd example
-$ npm install
-```
-
-Then run the **demo.js**:
-
-```bash
-$ node demo.js
+git clone https://github.com/vinodnimbalkar/dinvishesh.git
+cd dinvishesh/example
+npm install
+node demo.js
 ```
 
 ## Contributing
 
-Feel free to open an issue (or even better, send a Pull Request). Contributions are very welcome!! 😄
+Contributions are welcome! Here's how you can help:
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+Please ensure your PR includes appropriate tests and documentation updates.
+
+## Support the Project
+
+If you find this package useful, consider supporting the development:
 
 <a href="https://www.buymeacoffee.com/vinodnimbalkar" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
 
 ## License
 
-**MIT &copy; [Vinod Nimbalkar](https://github.com/vinodnimbalkar/dinvishesh/blob/master/LICENSE)**
+MIT © [Vinod Nimbalkar](https://github.com/vinodnimbalkar/dinvishesh/blob/master/LICENSE)
