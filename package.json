@@ -59,7 +59,7 @@
     "@size-limit/preset-small-lib": "^8.1.0",
     "husky": "^6.0.0",
     "size-limit": "^4.11.0",
-    "tsdx": "^0.14.1",
+    "tsdx": "^2.0.0",
     "tslib": "^2.2.0",
     "typescript": "^3.9.9"
   }
